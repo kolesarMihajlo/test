@@ -27,13 +27,13 @@ public class SearchStepTest {
 		searchPage = new SearchPage(driver);
 	}
 
-//	@Test
-//	public void main_test() {
-//		assertTrue(a_user_is_on_page());
-//		assertTrue(b_test_navigate_back());
-//	}
+	// @Test
+	// public void main_test() {
+	// 	assertTrue(a_user_is_on_page());
+	// 	assertTrue(b_test_navigate_back());
+	// }
 
-//	@Test(dataProvider = "search_params")
+	@Test(dataProvider = "search_params")
 	public void a_user_is_on_page(String searchParam) {
 		searchPage.navigate();
 		System.out.println("search: " + searchParam);
@@ -53,7 +53,6 @@ public class SearchStepTest {
 	public void b_test_navigate_back(String searchParam) {
 		System.out.println("b_test_navigate_back:" + driver.getCurrentUrl());
 		driver.navigate().back();
-//		return Constants.BASE_URL_GOOGLE.equals(driver.getCurrentUrl());
 		Assert.assertTrue(Constants.BASE_URL_GOOGLE.equals(driver.getCurrentUrl()));
 
 	}
@@ -68,9 +67,5 @@ public class SearchStepTest {
 		return new Object[][] { { "star trek" }, { "java" } };
 	}
 
-//	@Parameters(name = "{index}: Test with m1= {0}, result is:{0}")
-//	public static Collection<Object[]> data() {
-//		Object[][] data = new Object[][] { { "star trek" }, { "java" } };
-//		return Arrays.asList(data);
-//	}
+
 }
